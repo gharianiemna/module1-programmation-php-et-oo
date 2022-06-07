@@ -43,8 +43,6 @@ include 'header.php';
 
   </div>
 
-  <input type="hidden" name="id" value= <?php echo uniqid()?> />
-
    <button type="submit" class="btn btn-primary"  name="btn">Submit</button>
 </form>
 </div>
