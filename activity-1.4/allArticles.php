@@ -23,12 +23,12 @@ include 'utils.php';
 <?php foreach($artis as $art):?>
         <h2> Titre : <?php echo $art['titre'] ?></h2>
         <h4> Par :<?php echo $art['auteur'] ?></h4>
-        <h6> Le <?php echo  $art['date'] ?></h6>
+        <h6> Le <?php echo  $art['date_publication'] ?></h6>
         <p><?php echo $art['texte'] ?></p>
 
-        <!-- </div>
+       
                 <a  class="btn btn-primary" href="delete_post.php?id=<?php echo $art['id']?>">Supprimer</a>
-            </div> -->
+           
         <?php endforeach ?>
        
         </div>
