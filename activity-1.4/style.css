@@ -1,0 +1,33 @@
+
+
+
+h1 {
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+.images{
+  display: flex;
+  padding: 3rem;
+  margin: 3rem;
+  justify-items: center;
+  justify-content: center;
+  justify-self: center;
+  }
+
+
+.nav-item{
+    list-style-type: none; 
+    padding: 1rem; 
+    margin: 1rem; 
+}
+.foot{
+    background-color: grey;
+}
+.article{
+  padding: 3rem;
+  margin: 3rem;
+  text-align: justify;
+}
+body {
+    background-color: lightblue;
+  }
