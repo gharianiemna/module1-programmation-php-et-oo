@@ -16,6 +16,7 @@ include 'header.php';
 include 'utils.php';
 ?>
 
+
 <div class="article"> 
 <h2>Les acticles sont :</h2>
 <?php $artis=getArticles();?>
@@ -25,7 +26,9 @@ include 'utils.php';
         <h6> Le <?php echo  $art['date'] ?></h6>
         <p><?php echo $art['texte'] ?></p>
 
-
+        <!-- </div>
+                <a  class="btn btn-primary" href="delete_post.php?id=<?php echo $art['id']?>">Supprimer</a>
+            </div> -->
         <?php endforeach ?>
        
         </div>

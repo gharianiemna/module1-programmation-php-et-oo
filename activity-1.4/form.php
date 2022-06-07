@@ -13,9 +13,7 @@
 include 'header.php';
 ?>
 
-<?php 
-include 'connect.php';
-?>
+
 <?php  $myFile = "data.json"; ?>
 
 <div class="article">
@@ -52,32 +50,52 @@ include 'connect.php';
 </div>
 
 <?php 
+include 'connect.php';
+?>
+<?php 
+if ( isset($_POST['btn'])) {
+    // on va inserer dans la base de donnée dans le tableau, dans les colonnes les values qui sont les valeurs ecrite par utilisateur
+    $sqlQuery = 'INSERT INTO articles(titre, texte, auteur, date_publication) VALUES (:titre, :texte, :auteur, :date_publication)';
+    
+    $insertArticle = $db->prepare($sqlQuery);
+    
+    $insertArticle->execute([
+        'titre' => $_POST['titre'],
+        'texte' => $_POST['texte'],
+        'auteur' => $_POST['auteur'],
+        'date_publication' => $_POST['date'], 
+    ]);
+}
+    ?>
+
+ <?php 
 //creating records into the database articles
  
-$titre=$_POST['titre'];
-$auteur=$_POST['auteur'];
-$texte=$_POST['texte'];
-$date=$_POST['date'];
-$query="INSERT INTO articles(titre,auteur,texte,date_publication)";
-$query.="VALUES('$titre','$auteur','$description','$date')";
-$result=mysqli_query($connection,$query)
+// $titre=$_POST['titre'];
+// $auteur=$_POST['auteur'];
+// $texte=$_POST['texte'];
+// $date=$_POST['date'];
+// $query="INSERT INTO articles(titre,auteur,texte,date_publication)";
+// $query.="VALUES('$titre','$auteur','$description','$date')";
+// $result=mysqli_query($connection,$query)
  
-?>
+?> 
 
-<!-- <?php 
-if (isset($_POST['btn'])){
-$data ='';
-$filename = "data.json";
-if(is_file($filename)){
-    $data = file_get_contents($filename);
-}
-$json_arr = json_decode($data, true);
-$json_arr[]=array('titre' => $_POST['titre'],'texte'=> $_POST['texte'], 'auteur'=> $_POST['auteur'], 'date'=> $_POST['date'], 'id'=> $_POST['id']);
-
-file_put_contents($filename, json_encode($json_arr,JSON_PRETTY_PRINT));
-// header("location : http://http://localhost/module1/activity-1.2/form.php");
-}
-?>  -->
+ <?php 
+// if (isset($_POST['btn'])){
+// $data ='';
+// $filename = "data.json";
+// if(is_file($filename)){
+//     $data = file_get_contents($filename);
+// }
+// $json_arr = json_decode($data, true);
+//on cree une variable array vide qui va recevoir les données emises par l'utilisateur
+// $json_arr[]=array('titre' => $_POST['titre'],'texte'=> $_POST['texte'], 'auteur'=> $_POST['auteur'], 'date'=> $_POST['date'], 'id'=> $_POST['id']);
+//on va ensuite rendre ces donnée dans la forma json dans le fichier json
+// file_put_contents($filename, json_encode($json_arr,JSON_PRETTY_PRINT));
+// // header("location : http://http://localhost/module1/activity-1.2/form.php");
+// }
+?> 
 
 
 </body>
