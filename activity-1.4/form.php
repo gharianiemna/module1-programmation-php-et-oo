@@ -80,19 +80,7 @@ if ( isset($_POST['btn'])) {
 ?> 
 
  <?php 
-// if (isset($_POST['btn'])){
-// $data ='';
-// $filename = "data.json";
-// if(is_file($filename)){
-//     $data = file_get_contents($filename);
-// }
-// $json_arr = json_decode($data, true);
-//on cree une variable array vide qui va recevoir les données emises par l'utilisateur
-// $json_arr[]=array('titre' => $_POST['titre'],'texte'=> $_POST['texte'], 'auteur'=> $_POST['auteur'], 'date'=> $_POST['date'], 'id'=> $_POST['id']);
-//on va ensuite rendre ces donnée dans la forma json dans le fichier json
-// file_put_contents($filename, json_encode($json_arr,JSON_PRETTY_PRINT));
-// // header("location : http://http://localhost/module1/activity-1.2/form.php");
-// }
+
 ?> 
 
 
@@ -100,16 +88,3 @@ if ( isset($_POST['btn'])) {
 </html>
 
 
-
-<?php
-
-
-// try
-// {
-//     $db = new PDO('mysql:host=localhost;dbname=database;charset=utf8', 'root', '');
-// }
-// catch (Exception $e)
-// {
-//     die('Erreur : ' . $e->getMessage());
-// }
-// ?>

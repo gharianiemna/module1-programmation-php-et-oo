@@ -50,7 +50,7 @@ include 'utils.php';
 
         <form action="index.php" method="post" style="margin-bottom:10px;margin-left:20px;">
         <input type="hidden" name="article_id" value="<?php echo $art['id']?>">
-
+        <input type="hidden" name="date" value="<?php echo date('Y-m-d')?>">
         <div class="mb-3 d-flex">
         <input type="text" name="comment" style="width:50%;" class="form-control" id="exampleFormControlInput1" placeholder="Taper un commentaire">
         </div>
@@ -59,10 +59,7 @@ include 'utils.php';
         <input type="text" name="auteur" style="width:50%;" class="form-control" id="exampleFormControlInput1" placeholder="Auteur du commentaire">
         </div>
 
-        <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Date</label>
-        <input type="date" name ='date' class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style="width:50%;">
-        </div>
+
 
         <button type="submit" name="addComment" class="btn btn-secondary">Ajouter commentaire</button>
         </form> 
@@ -82,7 +79,7 @@ if ( isset($_POST['addComment'])) {
         'date_publication' => $_POST['date'], 
         'article_id' => $_POST['article_id'], 
     ]);
-    //header('Location: '.$rootUrl.'index.php');
+
 }
 ?>
     <?php
