@@ -58,4 +58,4 @@ function  getArticles($n=null){
         }
      return $array;
 }
-// print_r(getArticles(7));
+
