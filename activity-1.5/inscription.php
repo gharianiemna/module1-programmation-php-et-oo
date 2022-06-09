@@ -73,6 +73,17 @@ if ( isset($_POST['btn'])) {
         'Email' => $_POST['email'],
         'Password' => $hashed_password,
         ]);
+        // to direct the inscription page to the profile page after signup
+        $user_signup = [
+          'Name' => $_POST['name'],
+          'Age' => $_POST['age'],
+          'Gender' => $_POST['gender'],
+          'Country' => $_POST['country'],
+          'Email' => $_POST['email'],
+          'Password' => $hashed_password,
+        ];
+        $_SESSION['login_user'] = $user_signup;
+          header('LOCATION:index.php'); die();
 }
 
 catch (Exception $e)

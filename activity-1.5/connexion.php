@@ -23,12 +23,16 @@ include 'connect.php';
 <form class ='wrapper'  method="post" action="connexion.php">
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" value="<?php echo $_COOKIE['identifiant_connexion']  ?>" >
     <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+    <input type="password" class="form-control" id="exampleInputPassword1" name="password" value= "<?php echo $_COOKIE['password_connexion']  ?>">
+  </div>
+  <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1"  name='se_souvenir_de_moi'>
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
   </div>
   <button type="submit" class="btn btn-primary" name='submit'>Submit</button>
 </form>
@@ -47,14 +51,22 @@ include 'connect.php';
          
           $_SESSION['login_user'] = $user[0];
           
-          $_SESSION['name'] = $user[0]['name'];
+          // $_SESSION['name'] = $user[0]['name'];
           header('LOCATION:index.php'); die();
-        } {
+
+          if ($_POST['se_souvenir_de_moi']) {
+            $timestamp_expire = time() +365*24*3600; // Le cookie expirera dans un an
+            setcookie('identifiant_connexion',  $_POST['email'], $timestamp_expire); // On écrit un cookie
+            setcookie('password_connexion', $_POST['password'], $timestamp_expire);
+        
+       
+        }
+     
+        }else {
           echo "<div class='alert alert-danger'>Username and Password do not match.</div>";
         }
         
       }
-
-    ?>
+      ?> 
 </body>
 </html>

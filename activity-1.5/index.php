@@ -44,9 +44,9 @@ include 'connect.php';
           <div class="card-body">
 
           <!-- id-->
-            <p class="mb-0"><strong class="pr-1">Student ID:</strong><?php echo  $_SESSION['login_user']['id'] ?></p>
-            <a href="logout.php">Logout</a>
-    
+            <!-- <p class="mb-0"><strong class="pr-1">Student ID:</strong><?php echo  $_SESSION['login_user']['id'] ?></p> -->
+            <a href="logout.php"  class="btn btn-info"> <strong class="pr-1">LOGOUT </strong></a>
+       
           </div>
         </div>
       </div>
