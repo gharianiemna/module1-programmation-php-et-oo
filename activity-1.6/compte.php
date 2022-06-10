@@ -6,15 +6,11 @@ class Compte {
     protected int $code;
     public static int $n = 1;
     protected string $unite = '€';
-
+//  puisque le code se cree automatiquement en s'incremetant a chaque ouverture de compte
     public function  __construct($solde){
     $this->code= self::$n++;
         $this->setSolde($solde);
     }
-//  puisque le code se cree automatiquement en s'incremetant a chaque ouverture de compte
-    // public function setCode($code, $n){
-    //  $this->code=$code+ self::$n++;
-    // }
         public function setSolde($solde){
              $this->solde=$solde;
             }
@@ -38,7 +34,7 @@ $compte2=new Compte(12);
 
 $compte1->déposer(5);
 $compte1->retirer(3);
-
+$compte1->setSolde(300);
 $compte1->affichageSolde();
 
 $compte2->déposer(8);
