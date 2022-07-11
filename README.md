@@ -8,7 +8,8 @@ texte – Text
 auteur – Varchar 255
 date_publication – Date
 
-la fonction « getArticles » lit la base de données plutôt que le fichier articles.json
+La fonction « getArticles » lit la base de données plutôt que le fichier articles.json
+
 Ajout du boutton "supprimer" et lorsqu'il est cliqué, cela supprime son occurrence dans la base de données.
 
 Ajout de section commentaire

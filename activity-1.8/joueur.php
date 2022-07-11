@@ -81,12 +81,12 @@ class Joueur {
 }}
 $joueur=new Joueur('rania');
 $joueur3=new Joueur('emna');
-// $joueur->piocher($sort= new Sort);
-// $joueur->piocher($sort= new Sort);
-// $joueur->piocher($sort= new Sort);
+$joueur->piocher($sort= new Sort);
+$joueur->piocher($sort= new Sort);
+$joueur->piocher($sort= new Sort);
 
 
-// //  echo $joueur->montrerMain();
+ echo $joueur->montrerMain();
 //  echo $joueur->jouer($joueur3, 2);
 // echo $joueur->piocher($sort= new Sort);
 // print_r ($joueur->main);
